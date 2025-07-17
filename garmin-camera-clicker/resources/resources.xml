@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<resources>
+    <strings filename="strings/strings.xml"/>
+    
+    <drawables>
+        <drawable id="LauncherIcon" filename="drawables/launcher_icon.png"/>
+    </drawables>
+    
+    <layouts>
+    </layouts>
+    
+    <menus>
+    </menus>
+</resources>
+

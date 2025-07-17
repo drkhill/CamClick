@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="primary_blue_light">#BBDEFB</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_orange">#FF9800</color>
+    <color name="accent_red">#F44336</color>
+    
+    <!-- Status Colors -->
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="error_red">#F44336</color>
+    
+    <!-- Text Colors -->
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="hint_text">#BDBDBD</color>
+    <color name="white_text">#FFFFFF</color>
+    
+    <!-- Background Colors -->
+    <color name="background_color">#FAFAFA</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#2196F3</color>
+    <color name="button_primary_pressed">#1976D2</color>
+    <color name="button_secondary">#757575</color>
+    <color name="button_secondary_pressed">#616161</color>
+    <color name="button_outline">#E0E0E0</color>
+    
+    <!-- Divider Colors -->
+    <color name="divider_color">#E0E0E0</color>
+    <color name="border_color">#BDBDBD</color>
+    
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#80FFFFFF</color>
+    
+    <!-- Camera UI Colors -->
+    <color name="camera_overlay">#80000000</color>
+    <color name="camera_button">#FFFFFF</color>
+    <color name="camera_button_pressed">#E0E0E0</color>
+    
+    <!-- Notification Colors -->
+    <color name="notification_background">#2196F3</color>
+    <color name="notification_text">#FFFFFF</color>
+    
+    <!-- Material Design Colors -->
+    <color name="material_blue_grey_800">#37474F</color>
+    <color name="material_blue_grey_900">#263238</color>
+    <color name="material_deep_teal_500">#009688</color>
+    
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+</resources>
+

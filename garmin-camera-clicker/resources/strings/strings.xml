@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<strings>
+    <string id="AppName">Camera Clicker</string>
+    <string id="CapturePhoto">Capture Photo</string>
+    <string id="SwitchCamera">Switch Camera</string>
+    <string id="Settings">Settings</string>
+    <string id="Connected">Connected</string>
+    <string id="Disconnected">Disconnected</string>
+    <string id="Connecting">Connecting...</string>
+    <string id="PhotoCaptured">Photo Captured!</string>
+    <string id="CameraError">Camera Error</string>
+    <string id="ConnectionError">Connection Error</string>
+    <string id="FlashAuto">Flash: Auto</string>
+    <string id="FlashOn">Flash: On</string>
+    <string id="FlashOff">Flash: Off</string>
+    <string id="FrontCamera">Front Camera</string>
+    <string id="RearCamera">Rear Camera</string>
+    <string id="HighQuality">High Quality</string>
+    <string id="MediumQuality">Medium Quality</string>
+    <string id="LowQuality">Low Quality</string>
+    <string id="PairPhone">Pair with Phone</string>
+    <string id="Ready">Ready</string>
+    <string id="Capturing">Capturing...</string>
+</strings>
+
