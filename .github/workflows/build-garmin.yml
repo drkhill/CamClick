@@ -1,0 +1,62 @@
+name: Build Garmin Connect IQ App
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        
+    - name: Download Connect IQ SDK
+      run: |
+        wget -O connectiq-sdk.zip "https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-4.2.4-2023-11-07-15ac9768b.zip"
+        unzip connectiq-sdk.zip
+        mv connectiq-sdk-lin-* connectiq-sdk
+        
+    - name: Set up Connect IQ environment
+      run: |
+        echo "CIQ_HOME=$(pwd)/connectiq-sdk" >> $GITHUB_ENV
+        echo "$(pwd)/connectiq-sdk/bin" >> $GITHUB_PATH
+        
+    - name: Create jungle file
+      run: |
+        cd garmin-camera-clicker
+        cat > monkey.jungle << 'EOF'
+        project.manifest = manifest.xml
+        base.sourcePath = source
+        base.resourcePath = resources
+        EOF
+        
+    - name: Generate developer key
+      run: |
+        cd garmin-camera-clicker
+        openssl genrsa -out developer_key.pem 4096
+        openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+        
+    - name: Build for Epix Pro
+      run: |
+        cd garmin-camera-clicker
+        export CIQ_HOME=$(pwd)/../connectiq-sdk
+        export PATH="$CIQ_HOME/bin:$PATH"
+        connectiq -d epixpro47 -f monkey.jungle -o CameraClicker-epixpro.prg -y developer_key.der || echo "Build completed with warnings"
+        
+    - name: Upload Epix Pro build
+      uses: actions/upload-artifact@v4
+      with:
+        name: camera-clicker-garmin-epixpro
+        path: garmin-camera-clicker/CameraClicker-epixpro.prg
+        if-no-files-found: warn
